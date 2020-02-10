@@ -6,6 +6,7 @@
 namespace Rollers
 { 
   void control();
+  void outtakeSpeed();
 }
 
 #endif
