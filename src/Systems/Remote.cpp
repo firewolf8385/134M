@@ -8,7 +8,14 @@ namespace Remote
    */
   float axis1()
   {
-    return Controller1.Axis1.position(vex::percentUnits::pct);
+    float val = Controller1.Axis1.position(vex::percentUnits::pct);
+
+    if(val <= 5 && val >= -5)
+    {
+      val = 0;
+    }
+
+    return val;
   }
 
   /**
@@ -17,7 +24,14 @@ namespace Remote
    */
   float axis2()
   {
-    return Controller1.Axis2.position(vex::percentUnits::pct);
+    float val = Controller1.Axis2.position(vex::percentUnits::pct);
+
+    if(val <= 5 && val >= -5)
+    {
+      val = 0;
+    }
+
+    return val;
   }
 
   /**
@@ -26,7 +40,14 @@ namespace Remote
    */
   float axis3()
   {
-    return Controller1.Axis3.position(vex::percentUnits::pct);
+    float val = Controller1.Axis3.position(vex::percentUnits::pct);
+
+    if(val <= 5 && val >= -5)
+    {
+      val = 0;
+    }
+
+    return val;
   }
 
   /**
@@ -36,7 +57,22 @@ namespace Remote
 
   float axis4()
   {
-    return Controller1.Axis4.position(vex::percentUnits::pct);
+    float val = Controller1.Axis4.position(vex::percentUnits::pct);
+
+    if(val <= 5 && val >= -5)
+    {
+      val = 0;
+    }
+
+    return val;
+  }
+
+  /**
+   * Cause the controller to vibrate the info pattern.
+   */
+  void info()
+  {
+    Controller1.rumble(".");
   }
 
   /**

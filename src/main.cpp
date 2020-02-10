@@ -7,6 +7,10 @@
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 #include "Sensors/Encoder.h"
+#include "Systems/Drive.h"
+#include "Systems/Lift.h"
+#include "Systems/Rollers.h"
+#include "Systems/Tray.h"
 #include "vex.h"
 
 using namespace vex;
@@ -56,6 +60,12 @@ void usercontrol(void)
 {
   while(true)
   {
+    // Systems Control Functions
+    Drive::control();
+    Lift::control();
+    Rollers::control();
+    Tray::control();
+
     // Prevents the program from hogging all system resources.
     task::sleep(20);
   }

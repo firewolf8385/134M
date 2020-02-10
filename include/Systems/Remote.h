@@ -9,6 +9,7 @@ namespace Remote
   float axis2();
   float axis3();
   float axis4();
+  void info();
   void error();
   void warn();
 }
